@@ -1,26 +1,27 @@
 package com.proyectofinal.depaseo;
 
-//import java.util.HashMap;
+import java.util.HashMap;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table
-public class Ruta {
+public class Route {
 	@Id
 	private int id;
 	public String name;
 	public String type; // tipo Gastranomico, Historico, Arquitectónico, familiar, festeo...
-	public String location; // ubicación
+	//public  HashMap<>; // este hashmap nos permitirá guardar objetos con las informaciones
+	//de geolocalización y asociarlos a un tag.
 	
 	//******Constructor**********************************
 	
-	public Ruta(int id, String name, String type, String location) {
+	public Route(int id, String name, String type, String location) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.type = type;
-		this.location = location;
+		//this.location = location; modificar getters and setters
 	}
 	
 	// *******Getters && Setters******************************

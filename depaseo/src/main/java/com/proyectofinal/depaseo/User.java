@@ -1,18 +1,24 @@
 package com.proyectofinal.depaseo;
 
+import javax.persistence.Entity;
+
 //import java.util.HashMap; ¿?
 
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//import object.Ruta; ¿?
+//import object.Ruta;
 
+// Entity - intitat aplication properties - conección con BD H2
+
+@Entity
 @Table
-public class Usuario {
+public class User {
 	@Id
 	private int id;
 	public String name;
 	public String surname;
+	public String username;
 	public String email;
 	public String password;
 	//public HashMap<String, Ruta> rutes;
@@ -20,7 +26,7 @@ public class Usuario {
 	
 	// **********Constructor***********************************************************
 	
-	public Usuario(int id, String name, String surname, String email, String password) {
+	public User(int id, String name, String surname, String email, String password) {
 		super();
 		this.id = id;
 		this.name = name;
