@@ -1,0 +1,29 @@
+package utils;
+
+import java.util.Random;
+
+public class RandomUtils {
+
+	public static int createIntRandom(int top) {
+
+		Random rand = new Random();
+
+		// Generate random integers in range 0 to top, if top=10 random 0 to 9
+		int intRandom = rand.nextInt(top);
+		return intRandom;
+
+	}
+
+	public static char createCharRandom() {
+
+		String alphabetChars3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!�$%&/()=?�?=)()/*-+^*Ǩ_:;;:_+/+/";
+
+		// Generate random char in range 0 to top, if top=10 random 0 to 9
+
+		char charRandom = alphabetChars3.charAt(createIntRandom(alphabetChars3.length()));
+
+		return charRandom;
+
+	}
+
+}
