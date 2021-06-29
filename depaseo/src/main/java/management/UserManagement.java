@@ -9,7 +9,7 @@ import utils.UserUtils;
 
 public class UserManagement {
 	
-	public static void createUser(Scanner reader, ArrayList<User> users, Language language) {
+	public static void createUser(Scanner reader, ArrayList<User> users) {
 		
 		User newUser = new User();
 		
