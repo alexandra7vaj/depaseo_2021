@@ -2,7 +2,7 @@ package utils;
 
 import java.util.ArrayList;
 
-import model.User;
+import controller.User;
 
 public class UsersUtils {
 
