@@ -1,4 +1,4 @@
-package model;
+package controller;
 
 import java.util.ArrayList; // import object.Ruta;
 import javax.persistence.Entity; // intitat aplication properties - conección con BD H2
