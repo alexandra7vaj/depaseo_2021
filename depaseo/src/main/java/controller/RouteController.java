@@ -30,7 +30,7 @@ public String addRoute() {
 }
 
 
-	//-----------Update----------------
+	//-----------Update----------------tiene varios pasos, el find y el 
 @RequestMapping ("/updateroute")
 public String updateRoute() {
 	return "updateroute";		
