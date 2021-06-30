@@ -30,14 +30,14 @@ public String addRoute() {
 }
 
 
-	//-----------Update----------------tiene varios pasos, el find y el 
+	//-----------Update----------------Necesitamos hacer 2 pasos: find (si no lo encuentra, notfound) & replace
 @RequestMapping ("/updateroute")
 public String updateRoute() {
 	return "updateroute";		
 }
 
 
-	//-----------Delete----------------
+	//-----------Delete----------------Necesitamos hacer 2 pasos: find & delete
 @RequestMapping ("/deleteroute")
 public String deleteroute() {
 	return "deleteroute";
