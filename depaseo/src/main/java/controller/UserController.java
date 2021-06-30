@@ -13,10 +13,13 @@
 		@Autowired
 		UserRepository userRepository;	
 	
+//-----------CRUD----------------
+//-------------------------------
+//-------------------------------			
 		
 		
-		//-----------------------add----------------------------------
-		@RequestMapping("/newUser")
+//-----------Create----------------
+		@RequestMapping("/newuser")
 		public String newUser() {
 
 			return "newUser.html";
@@ -29,4 +32,33 @@
 
 			return "redirect:/employee/allEmployees";
 		}
-	}
+		
+		
+//-----------Update----------------	
+@RequestMapping("/updateuser")
+public String updateUser() {
+	return "updateuser";}
+
+	//to change userName
+	@RequestMapping ("/changeusername")
+	public String changeUserName (){
+		return "changeusername";} 
+	
+	//to change password
+	@RequestMapping ("/changepassword")		
+	public String changePassword (){
+		return "changepassword";} 
+		
+		
+//-----------Delete----------------
+@RequestMapping ("/deleteaccount")
+public String deleteAccount (){
+	return "deleteaccount";}
+
+		
+//-----------List (not necessary)--
+		
+			
+
+		}
+
