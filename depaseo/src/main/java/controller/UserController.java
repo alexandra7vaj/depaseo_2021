@@ -1,15 +1,13 @@
-
 	package controller;
-
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Controller;
 	import org.springframework.web.bind.annotation.RequestMapping;
 
-	@Controller
+@Controller
 
-	@RequestMapping("/usercontroller")
+@RequestMapping("/usercontroller")
 
-	public class UserController {
+public class UserController {
 		@Autowired
 		UserRepository userRepository;	
 	
@@ -19,14 +17,14 @@
 		
 		
 //-----------Create----------------
-		@RequestMapping("/newuser")
-		public String newUser() {
+@RequestMapping("/newuser")
+public String newUser() {
 
 			return "newUser.html";
 		}
 
-		@RequestMapping("/addUser")
-		public String inserUser(User user) {
+@RequestMapping("/addUser")
+public String inserUser(User user) {
 
 		//UserRepository.save(user);
 
