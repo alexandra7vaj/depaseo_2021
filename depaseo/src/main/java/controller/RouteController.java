@@ -25,7 +25,10 @@ public String newRoute() {
 	}	
 
 @RequestMapping ("/addroute")
-public String addRoute() {	
+public String addRoute(Route route) { //nos faltaba también, enviar el objeto route para poder hacer .save)
+	
+	routeRepository.save(route);
+	
 	return "addroute";	
 }
 

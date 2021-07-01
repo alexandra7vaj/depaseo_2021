@@ -22,12 +22,18 @@ public class Route {
 	
 public Route(int id, String name, String type, int location, HashMap<String, Route> routes) {
 	super();
-	this.id = id;
+	//this.id = id; innecesario porque el @id de JPA ya me lo crea
 	this.name = name;
 	this.type = type;
 	this.location = location;
 	this.routes = new HashMap <String, Route>(); //¿?
+	
 }
+
+//faltaba el constructor vacio:
+
+public Route() {
+	super();}
 
 // *******Getters && Setters**************
 
