@@ -8,8 +8,9 @@
 @RequestMapping("/usercontroller")
 
 public class UserController {
-		@Autowired
-		UserRepository userRepository;	
+		
+	@Autowired
+	UserRepository userRepository;	
 	
 //-----------CRUD----------------
 //-------------------------------
@@ -20,13 +21,13 @@ public class UserController {
 @RequestMapping("/newuser")
 public String newUser() {
 
-			return "newUser.html";
+			return "newuser.html";
 		}
 
-@RequestMapping("/addUser")
+@RequestMapping("/adduser")
 public String inserUser(User user) {
 
-		//UserRepository.save(user);
+		userRepository.save(user);
 
 			return "redirect:/employee/allEmployees";
 		}
