@@ -29,7 +29,7 @@ public class User {
 	public User(int id, String name, String surname, String userName, String email, String password,
 			boolean isValidated, boolean isBlocked, ArrayList<Route> routes) {
 		super();
-		this.id = id;
+		//this.id = id; innecesario porque el @id de JPA ya me lo crea
 		this.name = name;
 		this.surname = surname;
 		this.userName = userName;
@@ -39,6 +39,12 @@ public class User {
 		this.isBlocked = isBlocked;
 		this.routes = routes;
 	}
+	
+//faltaba el constructor vacio:
+
+	public User() {
+		super();}
+	
 	
 // *******Getters && Setters**************
 
