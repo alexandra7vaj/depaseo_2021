@@ -1,18 +1,23 @@
 package controller;
 
 import java.util.ArrayList; // import object.Ruta;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity; // intitat aplication properties - conección con BD H2
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 //import java.util.HashMap; ¿?
-
 
 
 @Entity
 @Table
 public class User {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	public String name;
 	public String surname;
@@ -21,12 +26,19 @@ public class User {
 	public String password;
 	public boolean isValidated = false;
 	public boolean isBlocked = false;
-	public ArrayList<Route> routes;
   //public HashMap<String, Ruta> rutes;
+
+	
+//Defining relationship type: One to Many
+	
+	@OneToMany (mappedBy= "user", cascade = CascadeType.ALL)
+	public ArrayList<Route> routes;
 	
 	
-// **********Constructor***********************************************************
-	public User(int id, String name, String surname, String userName, String email, String password,
+	
+//--------Constructor-------------
+	
+	public User(String name, String surname, String userName, String email, String password,
 			boolean isValidated, boolean isBlocked, ArrayList<Route> routes) {
 		super();
 		//this.id = id; innecesario porque el @id de JPA ya me lo crea
@@ -39,14 +51,13 @@ public class User {
 		this.isBlocked = isBlocked;
 		this.routes = routes;
 	}
-	
-//faltaba el constructor vacio:
+
 
 	public User() {
 		super();}
 	
 	
-// *******Getters && Setters**************
+// -----Getters and Setters----------
 
 	public int getId() {
 		return id;
@@ -120,7 +131,7 @@ public class User {
 		this.routes = routes;
 	}
 	
-// **********ToString***************************************
+// ------ToString------------
 
 	@Override
 	public String toString() {
