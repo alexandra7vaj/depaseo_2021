@@ -32,7 +32,7 @@ public class UserController {
 
 		userRepository.save(user);
 
-		return "?"; // importante decidir a donde queremos que nos redirija.
+		return "home.html"; // importante decidir a donde queremos que nos redirija.
 	}
 
 //Update:
