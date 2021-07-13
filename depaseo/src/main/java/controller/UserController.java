@@ -22,9 +22,9 @@ public class UserController {
 
 // Create:
 	@RequestMapping("/newuser")
-	public String newUser() {
+	public String newuser() {
 
-		return "newuser.html";
+		return "home.html";
 	}
 
 	@RequestMapping("/adduser")
