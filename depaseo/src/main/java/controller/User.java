@@ -21,8 +21,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	public String name;
-	public String surname;
-	public String userName;
+	public String username;
 	public String email;
 	public String password;
 	public boolean isValidated = false;
@@ -39,13 +38,12 @@ public class User {
 	
 //--------Constructor-------------
 	
-	public User(String name, String surname, String userName, String email, String password,
+	public User(String name, String userName, String email, String password,
 			boolean isValidated, boolean isBlocked, ArrayList<Route> routes) {
 		super();
 		//this.id = id; innecesario porque el @id de JPA ya me lo crea
 		this.name = name;
-		this.surname = surname;
-		this.userName = userName;
+		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.isValidated = isValidated;
@@ -76,20 +74,13 @@ public class User {
 		this.name = name;
 	}
 
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String username) {
+		this.username = username;
 	}
 
 	public String getEmail() {
@@ -136,7 +127,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", surname=" + surname + ", userName=" + userName + ", email="
+		return "User [id=" + id + ", name=" + name + ", username=" + username + ", email="
 				+ email + ", password=" + password + ", isValidated=" + isValidated + ", isBlocked=" + isBlocked
 				+ ", routes=" + routes + "]";
 		

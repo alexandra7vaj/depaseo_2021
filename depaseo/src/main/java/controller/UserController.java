@@ -24,11 +24,11 @@ public class UserController {
 	@RequestMapping("/newuser")
 	public String newuser() {
 
-		return "home.html";
+		return "newuser";
 	}
 
 	@RequestMapping("/adduser")
-	public String inserUser(User user) {
+	public String insertUser(User user) {
 
 		userRepository.save(user);
 
@@ -49,7 +49,7 @@ public class UserController {
 		return "notfound";
 	}
 
-	@PostMapping("/modifyUser/{idFromView}")
+	@PostMapping("/modifyuser/{idFromView}")
 	public String modifyUser(@PathVariable("idFromView") int id, User user) {
 
 		Optional<User> userFound = userRepository.findById(id);
