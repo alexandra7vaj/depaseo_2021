@@ -22,17 +22,17 @@ public class UserController {
 
 // Create:
 	@RequestMapping("/newuser")
-	public String newUser() {
+	public String newuser() {
 
-		return "newuser.html";
+		return "newuser";
 	}
 
 	@RequestMapping("/adduser")
-	public String inserUser(User user) {
+	public String insertUser(User user) {
 
 		userRepository.save(user);
 
-		return "?"; // importante decidir a donde queremos que nos redirija.
+		return "home.html"; // importante decidir a donde queremos que nos redirija.
 	}
 
 //Update:
@@ -49,7 +49,7 @@ public class UserController {
 		return "notfound";
 	}
 
-	@PostMapping("/modifyUser/{idFromView}")
+	@PostMapping("/modifyuser/{idFromView}")
 	public String modifyUser(@PathVariable("idFromView") int id, User user) {
 
 		Optional<User> userFound = userRepository.findById(id);
