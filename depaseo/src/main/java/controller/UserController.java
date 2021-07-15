@@ -28,9 +28,12 @@ public class UserController {
 	}
 
 	@RequestMapping("/adduser")
-	public String insertUser(User user) {
+	public String insertUser(User user, Model boxToView) {
 
 		userRepository.save(user);
+		
+		boxToView.addAttribute("userfromController", userRepository.findAll());
+		boxToView.addAttribute("userAdded", user);
 
 		return "home.html"; // importante decidir a donde queremos que nos redirija.
 	}
